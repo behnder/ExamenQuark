@@ -40,10 +40,10 @@ namespace examen
 
             inicio = new MainController();
             inicio.Inicializar();
-            lblNombreTienda.Text = inicio.tienda.Nombre;
-            lblDireccionTienda.Text = inicio.tienda.Direccion;
-            lblNombreVendedor.Text = inicio.vendedor.Nombre + " " + inicio.vendedor.Apellido;
-            lblCodigoVendedor.Text = "ID " + inicio.vendedor.CodigoVendedor.ToString();
+            lblNombreTienda.Text = inicio.Tienda.Nombre;
+            lblDireccionTienda.Text = inicio.Tienda.Direccion;
+            lblNombreVendedor.Text = inicio.Vendedor.Nombre + " " + inicio.Vendedor.Apellido;
+            lblCodigoVendedor.Text = "ID " + inicio.Vendedor.CodigoVendedor.ToString();
 
 
 

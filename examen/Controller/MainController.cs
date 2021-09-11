@@ -10,11 +10,15 @@ namespace examen.Controller
 {
     class MainController
     {
-        public Tienda tienda;
-        public Vendedor vendedor;
-        int stock = 0;
-        public Cotizacion cotizacion;
+        private Tienda tienda;
+        private Vendedor vendedor;
+        private int stock = 0;
+        private Cotizacion cotizacion;
         List<Cotizacion> historialCotizaciones = new List<Cotizacion>();
+
+        internal Tienda Tienda { get => tienda; set => tienda = value; }
+        internal Vendedor Vendedor { get => vendedor; set => vendedor = value; }
+
         public void Inicializar()
         {
             tienda = new Tienda("Tienda Mayo", "Colombres 899");

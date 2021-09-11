@@ -5,3 +5,4 @@ E:\unity\quark\examen\examen\obj\x64\v1\examen.Properties.Resources.resources
 E:\unity\quark\examen\examen\obj\x64\v1\examen.csproj.GenerateResource.cache
 E:\unity\quark\examen\examen\obj\x64\v1\examen.csproj.CoreCompileInputs.cache
 E:\unity\quark\examen\examen\obj\x64\v1\examen.exe
+E:\unity\quark\examen\examen\obj\x64\v1\examen.csproj.AssemblyReference.cache
