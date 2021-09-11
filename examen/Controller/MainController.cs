@@ -273,17 +273,17 @@ namespace examen.Controller
         }
         public void CrearCotizacion(Prenda prendaACotizar, ref TextBox cantidadPrendas, ref TextBox precio, ref Label lblCotizacionFinal)
         {
-           
-            
-            if (prendaACotizar.Stock < int.Parse(cantidadPrendas.Text))
-            {
-                MessageBox.Show("NO HAY SUFICIENTE STOCK");
-            }
-            else
-            {
 
-                try
+
+            try
+            {
+                if (prendaACotizar.Stock < int.Parse(cantidadPrendas.Text))
                 {
+                    MessageBox.Show("NO HAY SUFICIENTE STOCK");
+                }
+                else
+                {
+
                     int cantidad = int.Parse(cantidadPrendas.Text);
                     float precioPrenda = float.Parse(precio.Text);
 
@@ -322,23 +322,23 @@ namespace examen.Controller
                     historialCotizaciones.Add(new Cotizacion(this.vendedor.CodigoVendedor, prendaACotizar, cantidad));
                     lblCotizacionFinal.Text = (cantidad * precioPrenda).ToString();
 
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Debe ingresar una cantidad y precio");
-                }
-            }
 
+                }
+            }//-----------------
+            catch (Exception e)
+            {
+                MessageBox.Show("Debe ingresar una cantidad y precio");
+            }
 
         }
 
         public string MostrarHistorial(string listado)
         {
-          
+
             foreach (Cotizacion v in historialCotizaciones)
             {
 
-                listado += $"\n {v.CodigoVendedor} {vendedor.Nombre} {v.FechaYHora} " +(v.PrendaCotizada is Camisa ? "camisa" : "pantalon");
+                listado += $"\n {v.CodigoVendedor} {vendedor.Nombre} {v.FechaYHora} " + (v.PrendaCotizada is Camisa ? "camisa" : "pantalon");
             }
             return listado;
         }

@@ -33,7 +33,6 @@ namespace examen
             this.lblDireccionTienda = new System.Windows.Forms.Label();
             this.lblNombreVendedor = new System.Windows.Forms.Label();
             this.lblCodigoVendedor = new System.Windows.Forms.Label();
-            this.lblHistorialCotizaciones = new System.Windows.Forms.Label();
             this.groupPrenda = new System.Windows.Forms.GroupBox();
             this.checkChupin = new System.Windows.Forms.CheckBox();
             this.checkCuelloMao = new System.Windows.Forms.CheckBox();
@@ -98,15 +97,6 @@ namespace examen
             this.lblCodigoVendedor.Size = new System.Drawing.Size(89, 13);
             this.lblCodigoVendedor.TabIndex = 3;
             this.lblCodigoVendedor.Text = "Código Vendedor";
-            // 
-            // lblHistorialCotizaciones
-            // 
-            this.lblHistorialCotizaciones.AutoSize = true;
-            this.lblHistorialCotizaciones.Location = new System.Drawing.Point(270, 86);
-            this.lblHistorialCotizaciones.Name = "lblHistorialCotizaciones";
-            this.lblHistorialCotizaciones.Size = new System.Drawing.Size(107, 13);
-            this.lblHistorialCotizaciones.TabIndex = 4;
-            this.lblHistorialCotizaciones.Text = "Historial Cotizaciones";
             // 
             // groupPrenda
             // 
@@ -342,7 +332,6 @@ namespace examen
             this.Controls.Add(this.groupCalidadPrenda);
             this.Controls.Add(this.groupDisponibles);
             this.Controls.Add(this.groupPrenda);
-            this.Controls.Add(this.lblHistorialCotizaciones);
             this.Controls.Add(this.lblCodigoVendedor);
             this.Controls.Add(this.lblNombreVendedor);
             this.Controls.Add(this.lblDireccionTienda);
@@ -370,7 +359,6 @@ namespace examen
         private System.Windows.Forms.Label lblDireccionTienda;
         private System.Windows.Forms.Label lblNombreVendedor;
         private System.Windows.Forms.Label lblCodigoVendedor;
-        private System.Windows.Forms.Label lblHistorialCotizaciones;
         private System.Windows.Forms.GroupBox groupPrenda;
         private System.Windows.Forms.CheckBox checkChupin;
         private System.Windows.Forms.CheckBox checkCuelloMao;
