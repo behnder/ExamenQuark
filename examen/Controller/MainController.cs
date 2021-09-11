@@ -61,7 +61,7 @@ namespace examen.Controller
                                 {
                                     if (cami.Calidad == "Standard")
                                     {
-                                        MessageBox.Show("SOY STANDARD!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                      
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
                                         CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
@@ -74,7 +74,7 @@ namespace examen.Controller
 
                                     if (cami.Calidad == "Premium")
                                     {
-                                        MessageBox.Show("SOY premium!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                        
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
                                         CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
@@ -101,7 +101,7 @@ namespace examen.Controller
 
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
-                                        MessageBox.Show("SOY STANDARD!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                       
                                         CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
@@ -112,7 +112,7 @@ namespace examen.Controller
                                     {
                                         stock += v.Stock;
                                         prendaCotizada = v;
-                                        MessageBox.Show("SOY PREMIUM!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                        
                                         CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
@@ -212,7 +212,7 @@ namespace examen.Controller
                                 {
                                     if (panta.Calidad == "Standard")
                                     {
-                                        MessageBox.Show("SOY STANDARD!" + panta.Calidad + " " + panta.Stock + " " + panta.TipoCorte);
+                                        
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
                                         CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
@@ -222,7 +222,7 @@ namespace examen.Controller
                                 {
                                     if (panta.Calidad == "Premium")
                                     {
-                                        MessageBox.Show("SOY premium!" + panta.Calidad + " " + panta.Stock + " " + panta.TipoCorte);
+                                        
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
                                         CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
@@ -338,7 +338,7 @@ namespace examen.Controller
             foreach (Cotizacion v in historialCotizaciones)
             {
 
-                listado += $"\n {v.CodigoVendedor} {vendedor.Nombre} {v.FechaYHora} " + (v.PrendaCotizada is Camisa ? "camisa" : "pantalon");
+                listado += $"\n ID:  {v.CodigoVendedor}, Nombre: {vendedor.Nombre}, Fecha: {v.FechaYHora},  Prenda:" + (v.PrendaCotizada is Camisa ? "camisa" : "pantalon");
             }
             return listado;
         }
