@@ -55,6 +55,7 @@ namespace examen
             this.lblCotizacionFinal = new System.Windows.Forms.Label();
             this.lblSignoDinero = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupPrenda.SuspendLayout();
             this.groupDisponibles.SuspendLayout();
             this.groupCalidadPrenda.SuspendLayout();
@@ -101,7 +102,7 @@ namespace examen
             // lblHistorialCotizaciones
             // 
             this.lblHistorialCotizaciones.AutoSize = true;
-            this.lblHistorialCotizaciones.Location = new System.Drawing.Point(267, 55);
+            this.lblHistorialCotizaciones.Location = new System.Drawing.Point(270, 86);
             this.lblHistorialCotizaciones.Name = "lblHistorialCotizaciones";
             this.lblHistorialCotizaciones.Size = new System.Drawing.Size(107, 13);
             this.lblHistorialCotizaciones.TabIndex = 4;
@@ -317,11 +318,23 @@ namespace examen
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(270, 55);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(107, 13);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Historial Cotizaciones";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 408);
+            this.ClientSize = new System.Drawing.Size(398, 434);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblSignoDinero);
             this.Controls.Add(this.lblCotizacionFinal);
             this.Controls.Add(this.btnCotizar);
@@ -379,6 +392,7 @@ namespace examen
         private System.Windows.Forms.Label lblCotizacionFinal;
         private System.Windows.Forms.Label lblSignoDinero;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

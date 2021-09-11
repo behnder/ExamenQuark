@@ -13,7 +13,7 @@ namespace examen.Controller
         public Tienda tienda;
         public Vendedor vendedor;
         int stock = 0;
-        Cotizacion cotizacion;
+        public Cotizacion cotizacion;
         List<Cotizacion> historialCotizaciones = new List<Cotizacion>();
         public void Inicializar()
         {
@@ -31,7 +31,8 @@ namespace examen.Controller
 
 
         public void PrendaSeleccionada(RadioButton radioCamisa, CheckBox checkMangaCorta, CheckBox checkCuelloMao,
-            CheckBox checkChupin, ref Label lblStock, RadioButton radioStandard, ref TextBox txtPrecioPrenda, ref TextBox txtCantPrenda)
+            CheckBox checkChupin, ref Label lblStock, RadioButton radioStandard, ref TextBox txtPrecioPrenda,
+            ref TextBox txtCantPrenda, ref Label lblCotizacionFinal)
         {
             int mangacorta = 0;
             int mangaLarga = 0;
@@ -63,6 +64,7 @@ namespace examen.Controller
                                         MessageBox.Show("SOY STANDARD!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
 
@@ -75,6 +77,7 @@ namespace examen.Controller
                                         MessageBox.Show("SOY premium!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
 
@@ -99,6 +102,7 @@ namespace examen.Controller
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
                                         MessageBox.Show("SOY STANDARD!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
                                 }
@@ -109,6 +113,7 @@ namespace examen.Controller
                                         stock += v.Stock;
                                         prendaCotizada = v;
                                         MessageBox.Show("SOY PREMIUM!" + cami.Calidad + " " + cami.Stock + " " + cami.TipoManga + " " + cami.TipoCuello);
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
                                 }
@@ -129,6 +134,7 @@ namespace examen.Controller
                                     {
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
                                 }
@@ -138,6 +144,7 @@ namespace examen.Controller
                                     {
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
                                 }
@@ -159,6 +166,7 @@ namespace examen.Controller
                                     {
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
                                 }
@@ -168,6 +176,7 @@ namespace examen.Controller
                                     {
                                         stock = cami.Stock;
                                         prendaCotizada = cami;
+                                        CrearCotizacion(cami, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
                                 }
@@ -206,6 +215,7 @@ namespace examen.Controller
                                         MessageBox.Show("SOY STANDARD!" + panta.Calidad + " " + panta.Stock + " " + panta.TipoCorte);
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
+                                        CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
                                 }
                                 else if (!radioStandard.Checked)
@@ -215,6 +225,7 @@ namespace examen.Controller
                                         MessageBox.Show("SOY premium!" + panta.Calidad + " " + panta.Stock + " " + panta.TipoCorte);
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
+                                        CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
 
                                     }
                                 }//-
@@ -231,6 +242,7 @@ namespace examen.Controller
                                     {
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
+                                        CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
                                 }
@@ -241,6 +253,7 @@ namespace examen.Controller
                                     {
                                         stock = panta.Stock;
                                         prendaCotizada = panta;
+                                        CrearCotizacion(panta, ref txtCantPrenda, ref txtPrecioPrenda, ref lblCotizacionFinal);
                                     }
 
 
@@ -258,11 +271,76 @@ namespace examen.Controller
 
 
         }
-        public void CrearCotizacion(Prenda prendaACotizar, TextBox cantidadPrendas)
+        public void CrearCotizacion(Prenda prendaACotizar, ref TextBox cantidadPrendas, ref TextBox precio, ref Label lblCotizacionFinal)
         {
-            int cantidad = int.Parse(cantidadPrendas.Text);
-            historialCotizaciones.Add(new Cotizacion(this.vendedor.CodigoVendedor, prendaACotizar, cantidad));
+           
+            
+            if (prendaACotizar.Stock < int.Parse(cantidadPrendas.Text))
+            {
+                MessageBox.Show("NO HAY SUFICIENTE STOCK");
+            }
+            else
+            {
 
+                try
+                {
+                    int cantidad = int.Parse(cantidadPrendas.Text);
+                    float precioPrenda = float.Parse(precio.Text);
+
+                    if (prendaACotizar is Camisa)
+                    {
+                        Camisa camisa = (Camisa)prendaACotizar;
+                        if (camisa.TipoManga == "corta")
+                        {
+                            precioPrenda = precioPrenda * 0.90f;
+                            if (camisa.TipoCuello == "mao")
+                            {
+                                precioPrenda = precioPrenda * 1.03f;
+                            }
+
+                        }
+                        else if (camisa.TipoCuello == "mao")
+                        {
+                            precioPrenda = precioPrenda * 1.03f;
+                        }
+
+                    }
+                    if (prendaACotizar is Pantalon)
+                    {
+                        Pantalon pantalon = (Pantalon)prendaACotizar;
+                        if (pantalon.TipoCorte == "chupin")
+                        {
+                            precioPrenda = precioPrenda * 0.88f;
+                        }
+                    }
+
+                    if (prendaACotizar.Calidad == "Premium")
+                    {
+                        precioPrenda = precioPrenda * 1.3f;
+                    }
+
+                    historialCotizaciones.Add(new Cotizacion(this.vendedor.CodigoVendedor, prendaACotizar, cantidad));
+                    lblCotizacionFinal.Text = (cantidad * precioPrenda).ToString();
+
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Debe ingresar una cantidad y precio");
+                }
+            }
+
+
+        }
+
+        public string MostrarHistorial(string listado)
+        {
+          
+            foreach (Cotizacion v in historialCotizaciones)
+            {
+
+                listado += $"\n {v.CodigoVendedor} {vendedor.Nombre} {v.FechaYHora} " +(v.PrendaCotizada is Camisa ? "camisa" : "pantalon");
+            }
+            return listado;
         }
 
 

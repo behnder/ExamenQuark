@@ -1,4 +1,5 @@
 ﻿using examen.Controller;
+using examen.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace examen
     {
 
         MainController inicio;
-
+        
         public frmPrincipal()
         {
             InitializeComponent();
@@ -73,7 +74,15 @@ namespace examen
         {
 
             inicio.PrendaSeleccionada(radioCamisa, checkMangaCorta, checkCuelloMao, checkChupin,
-               ref lblStock, radioStandard, ref txtPrecioPrenda, ref txtCantPrenda);
+               ref lblStock, radioStandard, ref txtPrecioPrenda, ref txtCantPrenda,ref  lblCotizacionFinal);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string a = "";
+            MessageBox.Show(inicio.MostrarHistorial(a));
+           
+      
         }
     }
 }
