@@ -1,0 +1,10 @@
+E:\unity\quark\examen\examen\bin\Debug\examen.exe.config
+E:\unity\quark\examen\examen\bin\Debug\examen.exe
+E:\unity\quark\examen\examen\bin\Debug\examen.pdb
+E:\unity\quark\examen\examen\obj\Debug\examen.csproj.AssemblyReference.cache
+E:\unity\quark\examen\examen\obj\Debug\examen.Properties.Resources.resources
+E:\unity\quark\examen\examen\obj\Debug\examen.csproj.GenerateResource.cache
+E:\unity\quark\examen\examen\obj\Debug\examen.csproj.CoreCompileInputs.cache
+E:\unity\quark\examen\examen\obj\Debug\examen.exe
+E:\unity\quark\examen\examen\obj\Debug\examen.pdb
+E:\unity\quark\examen\examen\obj\Debug\examen.frmPrincipal.resources
