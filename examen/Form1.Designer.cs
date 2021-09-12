@@ -323,7 +323,7 @@ namespace examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 434);
+            this.ClientSize = new System.Drawing.Size(386, 414);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblSignoDinero);
             this.Controls.Add(this.lblCotizacionFinal);
@@ -336,6 +336,8 @@ namespace examen
             this.Controls.Add(this.lblNombreVendedor);
             this.Controls.Add(this.lblDireccionTienda);
             this.Controls.Add(this.lblNombreTienda);
+            this.MaximumSize = new System.Drawing.Size(402, 453);
+            this.MinimumSize = new System.Drawing.Size(402, 453);
             this.Name = "frmPrincipal";
             this.Text = "Cotizador de Prendas";
             this.Load += new System.EventHandler(this.Form1_Load);

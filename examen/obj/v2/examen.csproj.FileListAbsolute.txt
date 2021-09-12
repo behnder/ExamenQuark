@@ -1,0 +1,7 @@
+E:\unity\quark\examen\examen\bin\v2\examen.exe.config
+E:\unity\quark\examen\examen\bin\v2\examen.exe
+E:\unity\quark\examen\examen\obj\v2\examen.frmPrincipal.resources
+E:\unity\quark\examen\examen\obj\v2\examen.Properties.Resources.resources
+E:\unity\quark\examen\examen\obj\v2\examen.csproj.GenerateResource.cache
+E:\unity\quark\examen\examen\obj\v2\examen.csproj.CoreCompileInputs.cache
+E:\unity\quark\examen\examen\obj\v2\examen.exe
