@@ -2,7 +2,7 @@ Bienvenidos a la aplicación de Cotizacion.
 
 Para comenzar a utilizarla el archivo ejecutable es el que se encuentra en la direcciòn
 =================================================
-\examen\bin\x64\v1\cotizador.exe
+\examen\bin\v2\examen.exe
 =================================================
 
 -La carga debe contar con datos numericos ingresados tanto en el precio unitario como en la cantidad. De no ser así, se indicará mediante un mensaje que el ingreso no fue correcto.
